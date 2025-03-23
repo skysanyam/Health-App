@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthConnect Dashboard</title>
+  <style>
+    :root {
+      --primary: #4e7cff;
+      --secondary: #3c9d9b;
+      --light: #f5f8ff;
+      --dark: #2a3950;
+      --danger: #ff6b6b;
+      --warning: #ffb366;
+      --success: #66cc9a;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      color: var(--dark);
+    }
+    
+    .container {
+      max-width: 480px;
+      margin: 0 auto;
+      background-color: white;
+      height: 100vh;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      position: relative;
+    }
+    
+    header {
+      padding: 20px;
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: var(--primary);
+    }
+    
+    .user-profile {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: var(--light);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--primary);
+      font-weight: bold;
+    }
+    
+    .notification-panel {
+      background-color: var(--light);
+      padding: 15px;
+      margin: 15px;
+      border-radius: 10px;
+    }
+    
+    .notification-title {
+      font-weight: bold;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .notification-item {
+      background-color: white;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      border-left: 3px solid var(--primary);
+    }
+    
+    .notification-time {
+      font-size: 0.8rem;
+      color: #888;
+    }
+    
+    .quick-actions {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 15px;
+      margin-bottom: 20px;
+    }
+    
+    .action-button {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 70px;
+    }
+    
+    .action-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 15px;
+      background-color: var(--light);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+    
+    .action-label {
+      font-size: 0.8rem;
+      text-align: center;
+    }
+    
+    .records-section {
+      padding: 0 15px;
+    }
+    
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    
+    .view-all {
+      color: var(--primary);
+      font-size: 0.8rem;
+    }
+    
+    .record-card {
+      background-color: white;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      display: flex;
+      align-items: center;
+    }
+    
+    .record-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background-color: var(--light);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 15px;
+      color: var(--primary);
+    }
+    
+    .record-info {
+      flex-grow: 1;
+    }
+    
+    .record-title {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    
+    .record-date {
+      font-size: 0.8rem;
+      color: #888;
+    }
+    
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 480px;
+      display: flex;
+      justify-content: space-around;
+      background-color: white;
+      padding: 15px 0;
+      border-top: 1px solid #eee;
+    }
+    
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #888;
+    }
+    
+    .nav-item.active {
+      color: var(--primary);
+    }
+    
+    .nav-icon {
+      margin-bottom: 5px;
+    }
+    
+    .nav-label {
+      font-size: 0.7rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="logo">HealthConnect</div>
+      <div class="user-profile">JD</div>
+    </header>
+    
+    <!-- Notifications Panel -->
+    <div class="notification-panel">
+      <div class="notification-title">
+        <span>Notifications</span>
+        <span>View All</span>
+      </div>
+      <div class="notification-item">
+        <div>Medication Reminder: Take Lisinopril</div>
+        <div class="notification-time">Today, 8:00 AM</div>
+      </div>
+      <div class="notification-item" style="border-left-color: var(--warning);">
+        <div>Appointment with Dr. Smith tomorrow</div>
+        <div class="notification-time">10:30 AM at Mercy Hospital</div>
+      </div>
+    </div>
+    
+    <!-- Quick Actions -->
+    <div class="quick-actions">
+      <div class="action-button">
+        <div class="action-icon">🏥</div>
+        <div class="action-label">Medical Records</div>
+      </div>
+      <div class="action-button">
+        <div class="action-icon">💊</div>
+        <div class="action-label">Medications</div>
+      </div>
+      <div class="action-button">
+        <div class="action-icon">📅</div>
+        <div class="action-label">Appointments</div>
+      </div>
+      <div class="action-button">
+        <div class="action-icon">🔒</div>
+        <div class="action-label">Share Access</div>
+      </div>
+    </div>
+    
+    <!-- Health Records Section -->
+    <div class="records-section">
+      <div class="section-header">
+        <h3>Recent Health Records</h3>
+        <span class="view-all">View All</span>
+      </div>
+      
+      <div class="record-card">
+        <div class="record-icon">🔬</div>
+        <div class="record-info">
+          <div class="record-title">Blood Test Results</div>
+          <div class="record-date">March 15, 2025 - Mercy Hospital</div>
+        </div>
+      </div>
+      
+      <div class="record-card">
+        <div class="record-icon">💉</div>
+        <div class="record-info">
+          <div class="record-title">COVID-19 Booster Shot</div>
+          <div class="record-date">February 28, 2025 - Community Clinic</div>
+        </div>
+      </div>
+      
+      <div class="record-card">
+        <div class="record-icon">📋</div>
+        <div class="record-info">
+          <div class="record-title">Annual Physical Results</div>
+          <div class="record-date">January 10, 2025 - Dr. Johnson</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bottom Navigation -->
+    <div class="bottom-nav">
+      <div class="nav-item active">
+        <div class="nav-icon">🏠</div>
+        <div class="nav-label">Home</div>
+      </div>
+      <div class="nav-item">
+        <div class="nav-icon">📊</div>
+        <div class="nav-label">Dashboard</div>
+      </div>
+      <div class="nav-item">
+        <div class="nav-icon">📚</div>
+        <div class="nav-label">Resources</div>
+      </div>
+      <div class="nav-item">
+        <div class="nav-icon">⚙️</div>
+        <div class="nav-label">Settings</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
